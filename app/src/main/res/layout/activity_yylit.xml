@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gwc.yylit.YYLIT"
+    tools:layout_editor_absoluteY="100dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <Button
+        android:id="@+id/btnParents"
+        android:layout_width="259dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="30dp"
+        android:elevation="0dp"
+        android:text="@string/parentsChoice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCommute" />
+
+    <Button
+        android:id="@+id/btnCommute"
+        android:layout_width="264dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="30dp"
+        android:elevation="0dp"
+        android:text="@string/commuteChoice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTecnology" />
+
+    <TextView
+        android:id="@+id/topBanner"
+        android:layout_width="362dp"
+        android:layout_height="54dp"
+        android:fontFamily="monospace"
+        android:text="Yes, Your Life Is Terrible"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <Button
+        android:id="@+id/btnFood"
+        android:layout_width="263dp"
+        android:layout_height="70dp"
+        android:text="btn1"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="@string/foodChoice"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/topBanner" />
+
+    <Button
+        android:id="@+id/btnTecnology"
+        android:layout_width="259dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="30dp"
+        android:elevation="0dp"
+        android:text="@string/technologyChoice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFood" />
+
+    <ScrollView
+        android:id="@+id/scrollbar"
+        android:layout_width="10dp"
+        android:layout_height="477dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

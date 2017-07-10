@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">YYLIT</string>
+    <string name="foodChoice">FOOD</string>
+    <string name="technologyChoice">TECHNOLOGY</string>
+    <string name="commuteChoice">COMMUTE</string>
+    <string name="parentsChoice">PARENTS</string>
+</resources>
