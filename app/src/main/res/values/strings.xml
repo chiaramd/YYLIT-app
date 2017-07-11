@@ -5,4 +5,5 @@
     <string name="commuteChoice">COMMUTE</string>
     <string name="parentsChoice">PARENTS</string>
     <string name="familyChoice">FAMILY</string>
+    <string name="workChoice">WORK</string>
 </resources>
