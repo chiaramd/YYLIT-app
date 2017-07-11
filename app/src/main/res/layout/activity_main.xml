@@ -49,6 +49,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="sans-serif"
+                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/foodChoice"
@@ -68,6 +69,7 @@
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="sans-serif"
+                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/workChoice"
@@ -76,56 +78,60 @@
                 android:textSize="36sp"
                 android:textStyle="bold|italic"
                 android:typeface="normal" />
+
             <Button
                 android:id="@+id/btnTecnology"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:onClick="changeScreen"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
                 android:text="@string/technologyChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
                 android:textSize="36sp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:textStyle="bold|italic"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp" />
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btnFamily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:onClick="changeScreen"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
                 android:text="@string/familyChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
                 android:textSize="36sp"
-                android:textStyle="bold|italic"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"/>
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btnCommute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:onClick="changeScreen"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
                 android:text="@string/commuteChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
                 android:textSize="36sp"
-                android:textStyle="bold|italic"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"/>
+                android:textStyle="bold|italic" />
         </LinearLayout>
 
 
