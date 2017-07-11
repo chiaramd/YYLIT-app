@@ -4,6 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
+
         applicationId "com.example.gwc.yylit"
         minSdkVersion 19
         targetSdkVersion 26

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="apptour">
+        <item>@drawable/hunger2</item>
+        <item>@drawable/hunger1</item>
+    </array>
+
+</resources>
