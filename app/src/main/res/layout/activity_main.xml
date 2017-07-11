@@ -1,10 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.darntoncm.yylit.MainActivity">
+    tools:context="com.example.gwc.yylit.MainActivity"
+    tools:layout_editor_absoluteY="100dp"
+    tools:layout_editor_absoluteX="0dp"
+    android:background="@color/Greyish"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/topBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorPressedHighlight"
+        android:fontFamily="monospace"
+        android:text="Yes, Your Life Is Terrible"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"/>
+
+
+    <ScrollView
+
+        android:id="@+id/scrollbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btnFood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/holo_blue_dark"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/foodChoice"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:typeface="normal" />
+
+            <Button
+                android:id="@+id/btnWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/workChoice"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:typeface="normal" />
+            <Button
+                android:id="@+id/btnTecnology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="@string/technologyChoice"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textStyle="bold|italic"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" />
+
+            <Button
+                android:id="@+id/btnParents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="@string/familyChoice"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"/>
+
+            <Button
+                android:id="@+id/btnCommute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_blue_dark"
+                android:text="@string/commuteChoice"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
