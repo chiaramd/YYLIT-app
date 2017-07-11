@@ -35,10 +35,8 @@
     <ScrollView
 
         android:id="@+id/scrollbar"
-        android:layout_width="10dp"
-        android:layout_height="500dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
         android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,90 +51,67 @@
 
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="265dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="30dp"
-                android:background="@android:color/holo_blue_dark"
-                android:text="Something"
-                android:textColor="@android:color/white"
-                android:textSize="34sp"
-                app:layout_constraintHorizontal_bias="0.502"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnParents" />
-
-
-            <Button
                 android:id="@+id/btnFood"
-                android:layout_width="265dp"
-                android:layout_height="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:background="@android:color/holo_blue_dark"
-                android:elevation="0dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/foodChoice"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
-                android:textStyle="italic"
-                android:typeface="normal"
-                app:layout_constraintHorizontal_bias="0.505"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/topBanner" />
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Hello "/>
-
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:typeface="normal" />
 
             <Button
                 android:id="@+id/btnTecnology"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
                 android:text="@string/technologyChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
-                android:textStyle="italic"
-
-                 />
-
+                android:textSize="36sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btnParents"
-                android:layout_width="265dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:elevation="0dp"
                 android:text="@string/familyChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
-                android:textStyle="italic"
-                app:layout_constraintHorizontal_bias="0.504"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnCommute" />
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
 
             <Button
                 android:id="@+id/btnCommute"
-                android:layout_width="265dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:elevation="0dp"
                 android:text="@string/commuteChoice"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/background_light"
-                android:textStyle="italic"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnTecnology" />
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
         </LinearLayout>
 
 
