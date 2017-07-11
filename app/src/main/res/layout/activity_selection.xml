@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRandomGenerate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/browseForPic"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btnRandomGenerate"
         tools:layout_editor_absoluteX="0dp" />
 
     <TableLayout
@@ -46,13 +46,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/sym_def_app_icon"
+                android:layout_width="12dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/hunger2"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
 
@@ -60,6 +62,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -68,6 +71,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -75,12 +79,14 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -89,6 +95,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -97,6 +104,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -104,12 +112,14 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -118,6 +128,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -126,6 +137,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -133,12 +145,14 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -147,6 +161,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -155,6 +170,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -162,12 +178,14 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal">
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -176,6 +194,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
@@ -184,6 +203,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 app:srcCompat="@android:drawable/sym_def_app_icon"
                 tools:layout_editor_absoluteX="60dp"
                 tools:layout_editor_absoluteY="195dp" />
