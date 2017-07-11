@@ -1,6 +1,7 @@
 package com.example.darntoncm.yylit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gwc.yylit.R;
+import com.picture.PhotoActivity;
 
 import java.util.Random;
 
@@ -34,23 +36,34 @@ public class SelectionActivity extends AppCompatActivity {
         Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.i(TAG, "Random Generation");
+
+
+                Log.d("TAG", "Random Generation");
                 //code to randomly generate image
 //                ImageView img=(ImageView)findViewById(R.id.imageButton);
 //
-//                final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
-//                final Random rand = new Random();
-//                final int rndInt = rand.nextInt(imgs.length());
-//                final int resID = imgs.getResourceId(rndInt, 0);
+                final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
+                final Random rand = new Random();
+                final int rndInt = rand.nextInt(imgs.length());
+                final int resID = imgs.getResourceId(rndInt, 0);
+                String randomID = getResources().getResourceName(resID);
 
 
+                Log.d("TAG2", randomID);
 //                Random rand = new Random();
 //                int rndInt = rand.nextInt(52) + 1;
 //                String drawableName = "hunger" + rndInt;
 //                int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
 //                img.setImageResource(resID);
+
+                Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
+                sendRandomPic.putExtra("pic_name", randomID);
+
+                startActivity(sendRandomPic);
+
             }
         });
+
 
     }
 }
