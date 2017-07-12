@@ -49,7 +49,6 @@
                 android:layout_marginTop="30dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="sans-serif"
-                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/foodChoice"
@@ -69,7 +68,6 @@
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
                 android:fontFamily="sans-serif"
-                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/workChoice"
@@ -88,7 +86,6 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/technologyChoice"
@@ -106,7 +103,6 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/familyChoice"
@@ -124,7 +120,6 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:onClick="changeScreen"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/commuteChoice"
@@ -133,7 +128,5 @@
                 android:textSize="36sp"
                 android:textStyle="bold|italic" />
         </LinearLayout>
-
-
     </ScrollView>
 </LinearLayout>

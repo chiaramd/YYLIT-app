@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.gwc.yylit.R;
+
 import java.util.Random;
 
 public class SelectionActivity extends AppCompatActivity {
@@ -21,8 +23,7 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
-
-        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
+       Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Log.i(TAG, "Random Generation");
@@ -34,14 +35,13 @@ public class SelectionActivity extends AppCompatActivity {
                 final int rndInt = rand.nextInt(imgs.length());
                 final int resID = imgs.getResourceId(rndInt, 0);
 
-
 //                Random rand = new Random();
 //                int rndInt = rand.nextInt(52) + 1;
 //                String drawableName = "hunger" + rndInt;
 //                int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
                 img.setImageResource(resID);
             }
-        });
+       });
 
     }
 
