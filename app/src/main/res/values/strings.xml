@@ -3,6 +3,7 @@
     <string name="foodChoice">FOOD</string>
     <string name="technologyChoice">TECHNOLOGY</string>
     <string name="commuteChoice">COMMUTE</string>
+    <string name="waterChoice">WATER</string>
     <string name="parentsChoice">PARENTS</string>
     <string name="familyChoice">FAMILY</string>
     <string name="workChoice">WORK</string>

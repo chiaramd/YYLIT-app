@@ -33,19 +33,15 @@ public class SelectionActivity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_selection);
+
+
 
 
         Intent getTitle = getIntent();
         String title = getTitle.getStringExtra("title_string");
-
-
         TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
         myAwesomeTextView.setText(title);
-
-
-
-        setContentView(R.layout.activity_selection);
-
 
         Intent getCategoryNameFromEllie = getIntent();
         String arrayName = getCategoryNameFromEllie.getStringExtra("array_name");
