@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.gwc.yylit.R;
 import com.picture.PhotoActivity;
 
+import com.example.gwc.yylit.R;
+
 import java.util.Random;
 
 public class SelectionActivity extends AppCompatActivity {
