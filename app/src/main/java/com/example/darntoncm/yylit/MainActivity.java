@@ -14,6 +14,8 @@ import static com.example.gwc.yylit.R.id.btnFamily;
 import static com.example.gwc.yylit.R.id.btnTecnology;
 import static com.example.gwc.yylit.R.id.btnWork;
 
+import com.example.gwc.yylit.R;
+
 public class MainActivity extends AppCompatActivity {
 
     Intent changeScreen = new Intent(MainActivity.this, SelectionActivity.class);
