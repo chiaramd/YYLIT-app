@@ -47,6 +47,7 @@ public class ImageAdapter extends BaseAdapter {
             return 0;
         }
 
+
     }
     public Object getItem(int position) {
         return position;
@@ -113,20 +114,7 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.hunger7, R.drawable.hunger8, R.drawable.hunger9, R.drawable.hunger10
     };
     private Integer[] workIds = {
-<<<<<<< HEAD
-    };
-    private Integer[] technologyIds = {
-    };
-    private Integer[] commuteIds = {
-    };
-    private Integer[] familyIds = {
-    };
-    private Integer[] waterIds = {
-    };
 
-
-
-=======
             R.drawable.work1, R.drawable.work2, R.drawable.work3, R.drawable.work4, R.drawable.work5, R.drawable.work6,
             R.drawable.work7, R.drawable.work8, R.drawable.work9, R.drawable.work10
 
@@ -138,5 +126,4 @@ public class ImageAdapter extends BaseAdapter {
     private Integer familyIds[] = {
             R.drawable.family1, R.drawable.family2, R.drawable.family3, R.drawable.family4, R.drawable.family5, R.drawable.family6,
             R.drawable.family7, R.drawable.family8, R.drawable.family9, R.drawable.family0    };
->>>>>>> 09fd379000377bb799e72db1bdcbe76038fafad0
 }
