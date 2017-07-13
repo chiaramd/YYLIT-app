@@ -25,8 +25,27 @@ public class ImageAdapter extends BaseAdapter {
     public ImageAdapter(Context c) {
         mContext = c;
     }
+    public String category;
+    public void setCategory(String category){
+        this.category = category;
+
+    }
     public int getCount() {
-        return mThumbIds.length;
+        if(category == "foodIds") {
+            return foodIds.length;
+        } else if(category == "workIds") {
+            return workIds.length;
+        } else if(category == "technologyIds") {
+            return technologyIds.length;
+        } else if(category == "commuteIds") {
+            return commuteIds.length;
+        } else if(category == "familyIds") {
+            return familyIds.length;
+        } else if(category == "waterIds") {
+            return waterIds.length;
+        } else {
+            return 0;
+        }
     }
     public Object getItem(int position) {
         return position;
@@ -34,6 +53,27 @@ public class ImageAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return id;
     }
+
+    public int getDrawableName(int position) {
+        if(category == "foodIds") {
+            return foodIds[position];
+        } else if(category == "workIds") {
+            return workIds[position];
+        } else if(category == "technologyIds") {
+            return technologyIds[position];
+        } else if(category == "commuteIds") {
+            return commuteIds[position];
+        } else if(category == "familyIds") {
+            return familyIds[position];
+        } else if(category == "waterIds") {
+            return waterIds[position];
+        } else {
+            return 0;
+        }
+
+    }
+
+
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
         if (convertView==null) {
@@ -48,27 +88,39 @@ public class ImageAdapter extends BaseAdapter {
             imageView=(ImageView) convertView;
         }
 
-        imageView.setImageResource(mThumbIds[position]);
 
-//        Log.d("TAG3", mThumbIds[position]);
-//
-//        imageButton.setOnClickListener(new View.OnClickListener() {
-//
-//
-//            SelectionActivity.imageSelected(mThumbIds[position]) ;
-//
-//        });
 
+        if(category == "foodIds") {
+            imageView.setImageResource(foodIds[position]);
+        } else if(category == "workIds") {
+            imageView.setImageResource(workIds[position]);
+        } else if(category == "technologyIds") {
+            imageView.setImageResource(technologyIds[position]);
+        } else if(category == "commuteIds") {
+            imageView.setImageResource(commuteIds[position]);
+        } else if(category == "familyIds") {
+            imageView.setImageResource(familyIds[position]);
+        } else if(category == "waterIds") {
+            imageView.setImageResource(waterIds[position]);
+        }
         return imageView;
     }
-
-    private Integer[] mThumbIds = {
-            R.drawable.hunger1, R.drawable.hunger2
-    };
-
 
 
     private Integer[] foodIds = {
             R.drawable.hunger1, R.drawable.hunger2
     };
+    private Integer[] workIds = {
+    };
+    private Integer[] technologyIds = {
+    };
+    private Integer[] commuteIds = {
+    };
+    private Integer[] familyIds = {
+    };
+    private Integer[] waterIds = {
+    };
+
+
+
 }
