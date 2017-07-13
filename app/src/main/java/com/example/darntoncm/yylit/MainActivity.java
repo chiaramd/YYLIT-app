@@ -1,20 +1,19 @@
 package com.example.darntoncm.yylit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.gwc.yylit.R;
 
-import static com.example.gwc.yylit.R.id.btnCommute;
-import static com.example.gwc.yylit.R.id.btnFamily;
-import static com.example.gwc.yylit.R.id.btnTecnology;
-import static com.example.gwc.yylit.R.id.btnWork;
-
-import com.example.gwc.yylit.R;
+import static com.example.gwc.yylit.R.id.btnFood;
+import com.example.gwc.yylit.R.id.btnCommute;
+import com.example.gwc.yylit.R.id.btnFamily;
+import com.example.gwc.yylit.R.id.btnTechnology;
+import com.example.gwc.yylit.R.id.btnWork;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         btnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(changeScreen);
-                String FOOD = "@id/foodChoice";
-                changeScreen.putExtra("title_string", FOOD);
+                Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
+//                String FOOD = "@id/foodChoice";
+//                changeScreen.putExtra("title_string", FOOD);
             }
         });
 
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(changeScreen);
+                MainActivity.this.startActivity(changeScreen);
                 String WORK = "@id/workChoice";
                 changeScreen.putExtra("title_string", WORK);
             }
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btnTechnology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(changeScreen);
+                MainActivity.this.startActivity(changeScreen);
                 String TECHNOLOGY = "@id/technologyChoice";
                 changeScreen.putExtra("title_string", TECHNOLOGY);
             }
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(changeScreen);
+                MainActivity.this.startActivity(changeScreen);
                 String FAMILY = "@id/familyChoice";
                 changeScreen.putExtra("title_string", FAMILY);
             }
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         btnCommute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(changeScreen);
+                MainActivity.this.startActivity(changeScreen);
                 String COMMUTE = "@id/commuteChoice";
                 changeScreen.putExtra("title_string", COMMUTE);
             }

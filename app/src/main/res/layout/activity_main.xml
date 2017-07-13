@@ -41,6 +41,7 @@
 
             <Button
                 android:id="@+id/btnFood"
+                android:onClick="btnFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -60,6 +61,7 @@
 
             <Button
                 android:id="@+id/btnWork"
+                android:onClick="btnWork"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -78,7 +80,8 @@
                 android:typeface="normal" />
 
             <Button
-                android:id="@+id/btnTecnology"
+                android:id="@+id/btnTechnology"
+                android:onClick="btnTechnology"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -96,6 +99,7 @@
 
             <Button
                 android:id="@+id/btnFamily"
+                android:onClick="btnFamily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -113,6 +117,7 @@
 
             <Button
                 android:id="@+id/btnCommute"
+                android:onClick="btnCommute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
