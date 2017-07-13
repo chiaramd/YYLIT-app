@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.gwc.yylit.R;
+
 import java.util.Random;
 
 public class SelectionActivity extends AppCompatActivity {
