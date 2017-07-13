@@ -67,7 +67,7 @@ public class ImageAdapter extends BaseAdapter {
     };
 
 
-    
+
     private Integer[] foodIds = {
             R.drawable.hunger1, R.drawable.hunger2
     };

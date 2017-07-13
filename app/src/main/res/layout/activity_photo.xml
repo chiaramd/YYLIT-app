@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:visibility="visible"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="24dp" />
+        tools:layout_editor_absoluteY="24dp"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,5 +22,5 @@
         android:layout_height="495dp"
         app:srcCompat="@drawable/android"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp"/>
 </LinearLayout>
