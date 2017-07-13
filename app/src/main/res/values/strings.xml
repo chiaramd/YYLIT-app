@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">YYLIT</string>
+    <string name="app_name">Yes, Your Life Is Terrible</string>
+    <string name="foodChoice">FOOD</string>
+    <string name="technologyChoice">TECHNOLOGY</string>
+    <string name="commuteChoice">COMMUTE</string>
+    <string name="parentsChoice">PARENTS</string>
+    <string name="familyChoice">FAMILY</string>
+    <string name="workChoice">WORK</string>
     <string name="btnGeneratePic">Generate a Random Picture</string>
     <string name="browseForPic">Or just browse for a picture that captures your life\'s problems.</string>
 
@@ -8,4 +14,7 @@
         <item>Save to gallery</item>
         <item>Send with friends</item>
     </string-array>"
+
+    <string name="yylit">Yes, Your Life Is Terrible</string>
+
 </resources>
