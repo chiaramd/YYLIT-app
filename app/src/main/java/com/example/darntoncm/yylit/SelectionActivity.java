@@ -34,15 +34,26 @@ public class SelectionActivity extends AppCompatActivity {
 
 
         Intent getCategoryNameFromEllie = getIntent();
-        String arrayName = getCategoryNameFromEllie.getStringExtra("array_name");
-        Log.i(arrayName);
+        String arrayName = getCategoryNameFromEllie.getExtras("array_name");
+//        String arrayName = "foodIds";
 
-        Intent getTitle_string = getIntent();
-        String titleName = getTitle_string.getStringExtra("title_string");
+
+//        public static String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
+
+//        public static String test = "Hello World";
+
 
         Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
-        GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        final GridView gridview = (GridView) findViewById(R.id.gridview);
+        final ImageAdapter myImageAdapter = new ImageAdapter(this);
+        //get category from intent and pass to this function as a string
+        myImageAdapter.setCategory(arrayName);
+
+        gridview.setAdapter(myImageAdapter);
+
+
+        Intent getTitle = getIntent();
+        String title = getTitle.getExtras("title_string");
 
 
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +68,9 @@ public class SelectionActivity extends AppCompatActivity {
                 final Random rand = new Random();
                 final int rndInt = rand.nextInt(imgs.length());
                 final int resID = imgs.getResourceId(rndInt, 0);
-                String randomID = getResources().getResourceName(resID);
+                String randomID = getResources().getResourceEntryName(resID);
+
+                Log.d("TAG2", randomID);
 
 //                Random rand = new Random();
 //                int rndInt = rand.nextInt(52) + 1;
@@ -75,13 +88,36 @@ public class SelectionActivity extends AppCompatActivity {
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v, int i, long id) {
-                Integer position = (Integer) v.getTag();
-//                String idString = getResources().getResourceName(id);
+            public void onItemClick(AdapterView<?> parent, View v, int iii, long id) {
+                int position = (int) v.getTag();
                 Log.d("TAG4", "position=" + position);
+                int drawableName = myImageAdapter.getDrawableName(position);
+                Log.d("TAG10", "drawable:" + drawableName);
+
+                String drawableNameString = Integer.toString(drawableName);
+                Log.d("TAG11", drawableNameString);
+
+                String picID = getResources().getResourceEntryName(drawableName);
+                Log.d("TAG12", picID);
+
+//                String selectedItem = parent.getItemAtPosition(position).toString();
+//                Log.d("Tag3","selected item=" + selectedItem );
+////                String idString = getResources().getResourceName(id);
+//                ImageAdapter i = (ImageAdapter)parent.getAdapter();
+//                long gridPicId = i.getItemId(position);
+//                Log.d("TAG5.5", "long id:" + gridPicId);
+//                int gridPicIntId = (int) gridPicId;
+//                String gridPicName = v.getResources().getResourceEntryName(gridPicIntId);
+//                Log.d("TAG6", "id:" + gridPicIntId);
+//
+//                Log.d("TAG7", gridPicName);
+//
+//
+//                Object tagOfItem = v.getTag();
+//                Log.d("TAG8", tagOfItem.toString());
 
                 Intent sendSelectedPic = new Intent(SelectionActivity.this, PhotoActivity.class);
-                sendSelectedPic.putExtra("pic_name", position);
+                sendSelectedPic.putExtra("pic_name", picID);
                 startActivity(sendSelectedPic);
             }
         });
