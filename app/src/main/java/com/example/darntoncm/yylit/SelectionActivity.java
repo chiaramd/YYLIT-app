@@ -23,6 +23,8 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
+        Intent getintent = getIntent();
+
        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
