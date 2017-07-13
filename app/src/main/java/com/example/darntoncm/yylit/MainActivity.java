@@ -32,8 +32,20 @@ public class MainActivity extends AppCompatActivity {
                 changeScreen.putExtra("title_string", FOOD);
                 String foodIds = "foodIds";
                 changeScreen.putExtra("array_name", foodIds);
-           }
-      });
+               }
+          });
+
+        Button btnWater = (Button) findViewById(R.id.btnWater);
+        btnFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.this.startActivity(changeScreen);
+                String WATER = "@id/waterChoice";
+                    changeScreen.putExtra("title_string", WATER);
+                String waterIds = "waterIds";
+                changeScreen.putExtra("array_name", waterIds);
+            }
+        });
 
         Button btnWork = (Button) findViewById(R.id.btnWork);
         btnWork.setOnClickListener(new View.OnClickListener() {

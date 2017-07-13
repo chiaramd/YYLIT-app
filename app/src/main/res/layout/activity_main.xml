@@ -59,6 +59,25 @@
                 android:typeface="normal" />
 
             <Button
+                android:id="@+id/btnWater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/holo_blue_dark"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="@string/waterChoice"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:typeface="normal" />
+
+            <Button
                 android:id="@+id/btnWork"
                 android:onClick="btnWork"
                 android:layout_width="match_parent"
