@@ -32,6 +32,7 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
+
         Intent getCategoryNameFromEllie = getIntent();
         String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
 
