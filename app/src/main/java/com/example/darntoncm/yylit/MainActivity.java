@@ -9,30 +9,29 @@ import android.widget.Toast;
 
 import com.example.gwc.yylit.R;
 
-import static com.example.gwc.yylit.R.id.btnFood;
-import com.example.gwc.yylit.R.id.btnCommute;
-import com.example.gwc.yylit.R.id.btnFamily;
-import com.example.gwc.yylit.R.id.btnTechnology;
-import com.example.gwc.yylit.R.id.btnWork;
+import com.example.gwc.yylit.R.id.*;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    Intent changeScreen = new Intent(MainActivity.this, SelectionActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final Intent changeScreen = new Intent(MainActivity.this, SelectionActivity.class);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button btnFood = (Button) findViewById(R.id.btnFood);
         btnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
-//                String FOOD = "@id/foodChoice";
-//                changeScreen.putExtra("title_string", FOOD);
-            }
-        });
+                MainActivity.this.startActivity(changeScreen);
+                String FOOD = "@id/foodChoice";
+                changeScreen.putExtra("title_string", FOOD);
+           }
+      });
 
         Button btnWork = (Button) findViewById(R.id.btnWork);
         btnWork.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnTechnology = (Button) findViewById(R.id.btnTecnology);
+        Button btnTechnology = (Button) findViewById(R.id.btnTechnology);
         btnTechnology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
