@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gwc.yylit.R;
@@ -34,7 +35,7 @@ public class SelectionActivity extends AppCompatActivity {
 
 
         Intent getCategoryNameFromEllie = getIntent();
-        String arrayName = getCategoryNameFromEllie.getExtras("array_name");
+        String arrayName = getCategoryNameFromEllie.getStringExtra("array_name");
 //        String arrayName = "foodIds";
 
 
@@ -53,7 +54,11 @@ public class SelectionActivity extends AppCompatActivity {
 
 
         Intent getTitle = getIntent();
-        String title = getTitle.getExtras("title_string");
+        String title = getTitle.getStringExtra("title_string");
+
+
+        TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
+        myAwesomeTextView.setText(title);
 
 
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +84,7 @@ public class SelectionActivity extends AppCompatActivity {
 //                img.setImageResource(resID);
 
                 Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
-                sendRandomPic.putExtra("pic_name", randomID);
+                sendRandomPic.putExtra("pic_name", resID);
 
                 startActivity(sendRandomPic);
 
@@ -117,7 +122,7 @@ public class SelectionActivity extends AppCompatActivity {
 //                Log.d("TAG8", tagOfItem.toString());
 
                 Intent sendSelectedPic = new Intent(SelectionActivity.this, PhotoActivity.class);
-                sendSelectedPic.putExtra("pic_name", picID);
+                sendSelectedPic.putExtra("pic_name", drawableName);
                 startActivity(sendSelectedPic);
             }
         });

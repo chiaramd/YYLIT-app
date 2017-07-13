@@ -1,6 +1,7 @@
 package com.picture;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -22,9 +23,15 @@ public class PhotoActivity extends AppCompatActivity {
 
         //CHECK IF WORKS WITH OTHER ACTIVITY!!!
         Intent getimage = getIntent();
-        Integer variable = getimage.getIntExtra("pic_name", 0);  //add parameters
+        int variable = getimage.getIntExtra("pic_name",0);  //add parameters
+        String picID = getResources().getResourceEntryName(variable);
 
-           myImage.setImageDrawable(getResources().getDrawable(variable));
+
+        Drawable drawable = getDrawable(variable);
+        myImage.setImageDrawable(drawable);
+
+
+
 
 
 
