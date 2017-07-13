@@ -11,8 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.picture.PhotoActivity"/>
         <activity android:name="com.example.darntoncm.yylit.MainActivity">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
