@@ -64,6 +64,63 @@ public class SelectionActivity extends AppCompatActivity {
             }
         });
 
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int i, long id) {
+                Integer position = (Integer) v.getTag();
+//                String idString = getResources().getResourceName(id);
+                Log.d("TAG4", "position=" + position);
+
+                Intent sendSelectedPic = new Intent(SelectionActivity.this, PhotoActivity.class);
+                sendSelectedPic.putExtra("pic_name", position);
+                startActivity(sendSelectedPic);
+            }
+        });
+
+
+
+
+
+
+//        Button one = (Button) findViewById(R.id.gridview)
+//
+//        public void onClick(View v) {
+//            switch (v.getId()) {
+//                case R.id
+//            }
+//    }
+
+//        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
+//        btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//
+//                Log.d("TAG", "Random Generation");
+//                //code to randomly generate image
+////                ImageView img=(ImageView)findViewById(R.id.imageButton);
+////
+//                final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
+//                final Random rand = new Random();
+//                final int rndInt = rand.nextInt(imgs.length());
+//                final int resID = imgs.getResourceId(rndInt, 0);
+//                String randomID = getResources().getResourceName(resID);
+//
+//
+//                Log.d("TAG2", randomID);
+////                Random rand = new Random();
+////                int rndInt = rand.nextInt(52) + 1;
+////                String drawableName = "hunger" + rndInt;
+////                int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
+////                img.setImageResource(resID);
+//
+//                Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
+//                sendRandomPic.putExtra("pic_name", randomID);
+//
+//                startActivity(sendRandomPic);
+//
+//            }
+//        });
+
 
     }
 }

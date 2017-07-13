@@ -1,13 +1,19 @@
 package com.example.darntoncm.yylit;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.gwc.yylit.R;
+import com.picture.PhotoActivity;
+
+import static android.R.attr.id;
 
 /**
  * Created by darntoncm on 7/11/17.
@@ -22,10 +28,10 @@ public class ImageAdapter extends BaseAdapter {
         return mThumbIds.length;
     }
     public Object getItem(int position) {
-        return null;
+        return position;
     }
     public long getItemId(int position) {
-        return 0;
+        return id;
     }
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
@@ -34,11 +40,24 @@ public class ImageAdapter extends BaseAdapter {
             imageView.setLayoutParams(new GridView.LayoutParams(85,85));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8,8,8,8);
+            imageView.setTag(Integer.valueOf(position));
+//            imageButton.setAttribute(View_onClick, "imageSelected");
+
         } else {
             imageView=(ImageView) convertView;
         }
 
         imageView.setImageResource(mThumbIds[position]);
+
+//        Log.d("TAG3", mThumbIds[position]);
+//
+//        imageButton.setOnClickListener(new View.OnClickListener() {
+//
+//
+//            SelectionActivity.imageSelected(mThumbIds[position]) ;
+//
+//        });
+
         return imageView;
     }
 
