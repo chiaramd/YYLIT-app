@@ -42,6 +42,7 @@ public class SelectionActivity extends AppCompatActivity {
 
 //        public static String test = "Hello World";
 
+
         Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         final ImageAdapter myImageAdapter = new ImageAdapter(this);
