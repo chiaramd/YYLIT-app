@@ -30,7 +30,20 @@ public class SelectionActivity extends AppCompatActivity {
     static String TAG = "SelectionActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
+
+
+        Intent getTitle = getIntent();
+        String title = getTitle.getStringExtra("title_string");
+
+
+        TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
+        myAwesomeTextView.setText(title);
+
+
+
         setContentView(R.layout.activity_selection);
 
 
@@ -53,12 +66,7 @@ public class SelectionActivity extends AppCompatActivity {
         gridview.setAdapter(myImageAdapter);
 
 
-        Intent getTitle = getIntent();
-        String title = getTitle.getStringExtra("title_string");
 
-
-        TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
-        myAwesomeTextView.setText(title);
 
 
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
