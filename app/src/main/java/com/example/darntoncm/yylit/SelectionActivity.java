@@ -34,8 +34,8 @@ public class SelectionActivity extends AppCompatActivity {
 
 
         Intent getCategoryNameFromEllie = getIntent();
-//        String arrayName = getCategoryNameFromEllie.getExtra("array_name");
-        String arrayName = "foodIds";
+        String arrayName = getCategoryNameFromEllie.getExtras("array_name");
+//        String arrayName = "foodIds";
 
 
 //        public static String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
@@ -51,6 +51,10 @@ public class SelectionActivity extends AppCompatActivity {
         gridview.setAdapter(myImageAdapter);
 
 
+        Intent getTitle = getIntent();
+        String title = getTitle.getExtras("title_string");
+
+
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -64,6 +68,8 @@ public class SelectionActivity extends AppCompatActivity {
                 final int rndInt = rand.nextInt(imgs.length());
                 final int resID = imgs.getResourceId(rndInt, 0);
                 String randomID = getResources().getResourceEntryName(resID);
+
+                Log.d("TAG2", randomID);
 
 //                Random rand = new Random();
 //                int rndInt = rand.nextInt(52) + 1;
