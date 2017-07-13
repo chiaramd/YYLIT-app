@@ -3,10 +3,12 @@ package com.example.darntoncm.yylit;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Selection;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -30,12 +32,13 @@ public class SelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection);
 
+        Intent getintent = getIntent();
+
+       Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
 
 
-
-        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -50,8 +53,6 @@ public class SelectionActivity extends AppCompatActivity {
                 final int resID = imgs.getResourceId(rndInt, 0);
                 String randomID = getResources().getResourceName(resID);
 
-
-                Log.d("TAG2", randomID);
 //                Random rand = new Random();
 //                int rndInt = rand.nextInt(52) + 1;
 //                String drawableName = "hunger" + rndInt;
@@ -64,7 +65,7 @@ public class SelectionActivity extends AppCompatActivity {
                 startActivity(sendRandomPic);
 
             }
-        });
+       });
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -125,5 +126,6 @@ public class SelectionActivity extends AppCompatActivity {
 
 
     }
+
 }
 
