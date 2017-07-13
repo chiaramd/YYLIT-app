@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(changeScreen);
                 String FOOD = "@id/foodChoice";
                 changeScreen.putExtra("title_string", FOOD);
+                String foodIds = "foodIds";
+                changeScreen.putExtra("array_name", foodIds);
            }
       });
 
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(changeScreen);
                 String WORK = "@id/workChoice";
                 changeScreen.putExtra("title_string", WORK);
+                String workIds = "workIds";
+                changeScreen.putExtra("array_name", workIds);
             }
         });
 
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(changeScreen);
                 String TECHNOLOGY = "@id/technologyChoice";
                 changeScreen.putExtra("title_string", TECHNOLOGY);
+                String technologyIds = "technologyIds";
+                changeScreen.putExtra("array_name", technologyIds);
             }
         });
 
@@ -60,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(changeScreen);
                 String FAMILY = "@id/familyChoice";
                 changeScreen.putExtra("title_string", FAMILY);
+                String familyIds = "familyIds";
+                changeScreen.putExtra("array_name", familyIds);
             }
         });
 
@@ -70,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(changeScreen);
                 String COMMUTE = "@id/commuteChoice";
                 changeScreen.putExtra("title_string", COMMUTE);
+                String commuteIds = "commuteIds";
+                changeScreen.putExtra("array_name", commuteIds);
             }
         });
 
