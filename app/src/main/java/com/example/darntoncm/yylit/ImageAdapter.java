@@ -26,7 +26,7 @@ public class ImageAdapter extends BaseAdapter {
         mContext = c;
     }
     public int getCount() {
-        return apptour.;
+        return apptour;
     }
     public Object getItem(int position) {
         return position;
