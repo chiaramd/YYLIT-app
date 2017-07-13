@@ -14,6 +14,7 @@ import com.example.gwc.yylit.R;
 import com.picture.PhotoActivity;
 
 import static android.R.attr.id;
+import static com.example.gwc.yylit.R.array.apptour;
 
 /**
  * Created by darntoncm on 7/11/17.
@@ -25,7 +26,7 @@ public class ImageAdapter extends BaseAdapter {
         mContext = c;
     }
     public int getCount() {
-        return mThumbIds.length;
+        return apptour.;
     }
     public Object getItem(int position) {
         return position;
@@ -61,7 +62,10 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
 
-    private Integer[] mThumbIds = {
+//    private Integer[] mThumbIds = {
+//            R.drawable.hunger1, R.drawable.hunger2
+//    };
+    private Integer[] foodIds = {
             R.drawable.hunger1, R.drawable.hunger2
     };
 }
