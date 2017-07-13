@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.picture.PhotoActivity"
     android:orientation="vertical"
-    android:weightSum="1"/>
+    android:weightSum="1">
 
     <Spinner
         android:id="@+id/spinner"

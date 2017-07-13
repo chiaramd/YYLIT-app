@@ -26,7 +26,7 @@ public class ImageAdapter extends BaseAdapter {
         mContext = c;
     }
     public int getCount() {
-        return apptour.;
+        return mThumbIds.length;
     }
     public Object getItem(int position) {
         return position;
@@ -62,9 +62,12 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
 
-//    private Integer[] mThumbIds = {
-//            R.drawable.hunger1, R.drawable.hunger2
-//    };
+    private Integer[] mThumbIds = {
+            R.drawable.hunger1, R.drawable.hunger2
+    };
+
+
+    
     private Integer[] foodIds = {
             R.drawable.hunger1, R.drawable.hunger2
     };

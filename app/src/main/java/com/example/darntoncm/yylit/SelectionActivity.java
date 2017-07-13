@@ -33,7 +33,9 @@ public class SelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selection);
 
         Intent getCategoryNameFromEllie = getIntent();
-        String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
+        public static String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
+
+        public static String test = "Hello World";
 
         Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         GridView gridview = (GridView) findViewById(R.id.gridview);
