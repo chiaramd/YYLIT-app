@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="apptour">
+    <array name="familyArray">
         <item>@drawable/hunger2</item>
         <item>@drawable/hunger1</item>
         <item>@drawable/hunger3</item>

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.this.startActivity(changeScreen);
-                String FOOD = "@id/foodChoice";
+                String FOOD = "Food";
                 changeScreen.putExtra("title_string", FOOD);
                 String foodIds = "foodIds";
                 changeScreen.putExtra("array_name", foodIds);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MainActivity.this.startActivity(changeScreen);
-                String WORK = "@id/workChoice";
+                String WORK = "Work";
                 changeScreen.putExtra("title_string", WORK);
                 String workIds = "workIds";
                 changeScreen.putExtra("array_name", workIds);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MainActivity.this.startActivity(changeScreen);
-                String TECHNOLOGY = "@id/technologyChoice";
+                String TECHNOLOGY = "Technology";
                 changeScreen.putExtra("title_string", TECHNOLOGY);
                 String technologyIds = "technologyIds";
                 changeScreen.putExtra("array_name", technologyIds);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MainActivity.this.startActivity(changeScreen);
-                String FAMILY = "@id/familyChoice";
+                String FAMILY = "Family";
                 changeScreen.putExtra("title_string", FAMILY);
                 String familyIds = "familyIds";
                 changeScreen.putExtra("array_name", familyIds);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 MainActivity.this.startActivity(changeScreen);
-                String COMMUTE = "@id/commuteChoice";
+                String COMMUTE = "Commute";
                 changeScreen.putExtra("title_string", COMMUTE);
                 String commuteIds = "commuteIds";
                 changeScreen.putExtra("array_name", commuteIds);

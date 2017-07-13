@@ -110,7 +110,7 @@ public class ImageAdapter extends BaseAdapter {
 
 
     private Integer[] foodIds = {
-            R.drawable.hunger1, R.drawable.hunger2, R.drawable.hunger3, R.drawable.hunger4, R.drawable.hunger5, R.drawable.hunger6
+            R.drawable.hunger1, R.drawable.hunger2, R.drawable.hunger3, R.drawable.hunger4, R.drawable.hunger5, R.drawable.hunger6,
             R.drawable.hunger7, R.drawable.hunger8, R.drawable.hunger9, R.drawable.hunger10
     };
     private Integer[] workIds = {
@@ -124,6 +124,9 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.water7, R.drawable.water8, R.drawable.water9, R.drawable.water10
     };
     private Integer familyIds[] = {
-            R.drawable.family1, R.drawable.family2, R.drawable.family3, R.drawable.family4, R.drawable.family5, R.drawable.family6,
-            R.drawable.family7, R.drawable.family8, R.drawable.family9, R.drawable.family0    };
+            R.drawable.family1, R.drawable.family2   };
+    private Integer technologyIds[] = {};
+    private Integer commuteIds[] = {};
+
+
 }
