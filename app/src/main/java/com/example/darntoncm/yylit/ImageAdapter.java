@@ -66,6 +66,19 @@ public class ImageAdapter extends BaseAdapter {
 //            R.drawable.hunger1, R.drawable.hunger2
 //    };
     private Integer[] foodIds = {
-            R.drawable.hunger1, R.drawable.hunger2
+            R.drawable.hunger1, R.drawable.hunger2, R.drawable.hunger3, R.drawable.hunger4, R.drawable.hunger5, R.drawable.hunger6
+            R.drawable.hunger7, R.drawable.hunger8, R.drawable.hunger9, R.drawable.hunger10
     };
+    private Integer[] workIds = {
+            R.drawable.work1, R.drawable.work2, R.drawable.work3, R.drawable.work4, R.drawable.work5, R.drawable.work6,
+            R.drawable.work7, R.drawable.work8, R.drawable.work9, R.drawable.work10
+
+    };
+    private Integer[] waterIds = {
+            R.drawable.water1, R.drawable.water2, R.drawable.water3, R.drawable.water4, R.drawable.water5, R.drawable.water6,
+            R.drawable.water7, R.drawable.water8, R.drawable.water9, R.drawable.water10
+    };
+    private Integer familyIds[] = {
+            R.drawable.family1, R.drawable.family2, R.drawable.family3, R.drawable.family4, R.drawable.family5, R.drawable.family6,
+            R.drawable.family7, R.drawable.family8, R.drawable.family9, R.drawable.family0    };
 }
