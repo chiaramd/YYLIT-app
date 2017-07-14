@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="TechArray">
-        <item>@drawable/hunger2</item>
-        <item>@drawable/hunger1</item>
+        <item>@drawable/technology1</item>
     </array>
 
 </resources>

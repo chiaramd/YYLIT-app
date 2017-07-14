@@ -11,6 +11,8 @@
     <string name="browseForPic">Or just browse for a picture that captures your life\'s problems.</string>
 
 
+
+
     <string-array name="names">
         <item>Save to gallery</item>
         <item>Send with friends</item>

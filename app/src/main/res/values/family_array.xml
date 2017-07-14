@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="familyArray">
-        <item>@drawable/hunger2</item>
-        <item>@drawable/hunger1</item>
-        <item>@drawable/hunger3</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <array name="FamilyArray">
+        <item>@drawable/family1</item>
+        <item>@drawable/family2</item>
+        <item>@drawable/family3</item>
+        <item>@drawable/family4</item>
+        <item>@drawable/family5</item>
+        <item>@drawable/family6</item>
+        <item>@drawable/family7</item>
+        <item>@drawable/family8</item>
+        <item>@drawable/family9</item>
+        <item>@drawable/family10</item>
     </array>
 
 </resources>

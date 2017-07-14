@@ -49,7 +49,6 @@ public class SelectionActivity extends AppCompatActivity {
 
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         final ImageAdapter myImageAdapter = new ImageAdapter(this);
-        //get category from intent and pass to this function as a string
         myImageAdapter.setCategory(arrayName);
 
         gridview.setAdapter(myImageAdapter);
@@ -59,14 +58,36 @@ public class SelectionActivity extends AppCompatActivity {
         Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d("TAG", "Random Generation");
+//                Log.d("TAG", "Random Generation");
 // randomly generate image
-                final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
-                final Random rand = new Random();
-                final int rndInt = rand.nextInt(imgs.length());
-                final int resID = imgs.getResourceId(rndInt, 0);
+                Intent getCategoryNameFromEllie = getIntent();
+                String arrayName2 = getCategoryNameFromEllie.getStringExtra("array_name");
+
+                TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
+
+                if(arrayName2.equals("foodIds")) {
+//                    Log.d("TAG13", "Food");
+                      imgs = getResources().obtainTypedArray(R.array.FoodArray);
+                } else if(arrayName2.equals("workIds")) {
+                      imgs = getResources().obtainTypedArray(R.array.WorkArray);
+                } else if(arrayName2.equals("technologyIds")) {
+                      imgs = getResources().obtainTypedArray(R.array.TechArray);
+                } else if(arrayName2.equals("commuteIds")) {
+                      imgs = getResources().obtainTypedArray(R.array.CommuteArray);
+                } else if(arrayName2.equals("familyIds")) {
+                      imgs = getResources().obtainTypedArray(R.array.FamilyArray);
+                } else if(arrayName2.equals("waterIds")) {
+                      imgs = getResources().obtainTypedArray(R.array.WaterArray);
+                } else {
+//                    Log.d("TAG14", "ITS NOT WORKING");
+
+                }
+                Random rand = new Random();
+                int rndInt = rand.nextInt(imgs.length());
+//                Log.d("TAG13", "Random:" + rndInt);
+                int resID = imgs.getResourceId(rndInt, 0);
                 String randomID = getResources().getResourceEntryName(resID);
-                Log.d("TAG2", randomID);
+//                Log.d("TAG2", randomID);
 // send image ID to Photo Activity
                 Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
                 sendRandomPic.putExtra("pic_name", resID);
@@ -80,83 +101,20 @@ public class SelectionActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int iii, long id) {
                 int position = (int) v.getTag();
-                Log.d("TAG4", "position=" + position);
+//                Log.d("TAG4", "position:" + position);
                 int drawableName = myImageAdapter.getDrawableName(position);
-                Log.d("TAG10", "drawable:" + drawableName);
-
-                String drawableNameString = Integer.toString(drawableName);
-                Log.d("TAG11", drawableNameString);
+//                Log.d("TAG10", "drawable:" + drawableName);
 
                 String picID = getResources().getResourceEntryName(drawableName);
-                Log.d("TAG12", picID);
+//                Log.d("TAG12", "image name:" + picID);
 
-//                String selectedItem = parent.getItemAtPosition(position).toString();
-//                Log.d("Tag3","selected item=" + selectedItem );
-////                String idString = getResources().getResourceName(id);
-//                ImageAdapter i = (ImageAdapter)parent.getAdapter();
-//                long gridPicId = i.getItemId(position);
-//                Log.d("TAG5.5", "long id:" + gridPicId);
-//                int gridPicIntId = (int) gridPicId;
-//                String gridPicName = v.getResources().getResourceEntryName(gridPicIntId);
-//                Log.d("TAG6", "id:" + gridPicIntId);
-//
-//                Log.d("TAG7", gridPicName);
-//
-//
-//                Object tagOfItem = v.getTag();
-//                Log.d("TAG8", tagOfItem.toString());
+// send drawableName (id number)
 
                 Intent sendSelectedPic = new Intent(SelectionActivity.this, PhotoActivity.class);
                 sendSelectedPic.putExtra("pic_name", drawableName);
                 startActivity(sendSelectedPic);
             }
         });
-
-
-
-
-
-
-//        Button one = (Button) findViewById(R.id.gridview)
-//
-//        public void onClick(View v) {
-//            switch (v.getId()) {
-//                case R.id
-//            }
-//    }
-
-//        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
-//        btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//
-//
-//                Log.d("TAG", "Random Generation");
-//                //code to randomly generate image
-////                ImageView img=(ImageView)findViewById(R.id.imageButton);
-////
-//                final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
-//                final Random rand = new Random();
-//                final int rndInt = rand.nextInt(imgs.length());
-//                final int resID = imgs.getResourceId(rndInt, 0);
-//                String randomID = getResources().getResourceName(resID);
-//
-//
-//                Log.d("TAG2", randomID);
-////                Random rand = new Random();
-////                int rndInt = rand.nextInt(52) + 1;
-////                String drawableName = "hunger" + rndInt;
-////                int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
-////                img.setImageResource(resID);
-//
-//                Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
-//                sendRandomPic.putExtra("pic_name", randomID);
-//
-//                startActivity(sendRandomPic);
-//
-//            }
-//        });
-
-
     }
 
 }

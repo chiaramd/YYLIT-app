@@ -15,7 +15,6 @@ import com.picture.PhotoActivity;
 
 import static android.R.attr.drawable;
 import static android.R.attr.id;
-import static com.example.gwc.yylit.R.array.apptour;
 
 /**
  * Created by darntoncm on 7/11/17.
@@ -33,7 +32,7 @@ public class ImageAdapter extends BaseAdapter {
     }
     public int getCount() {
         if(category.equals("foodIds")) {
-            Log.d("TAG13", "Food");
+//            Log.d("TAG13", "Food");
             return foodIds.length;
         } else if(category.equals("workIds")) {
             return workIds.length;
@@ -46,8 +45,7 @@ public class ImageAdapter extends BaseAdapter {
         } else if(category.equals("waterIds")) {
             return waterIds.length;
         } else {
-            Log.d("TAG12", "ITS NOT WORKING");
-
+//            Log.d("TAG13", "ITS NOT WORKING");
             return 0;
         }
 
@@ -87,13 +85,11 @@ public class ImageAdapter extends BaseAdapter {
             imageView.setLayoutParams(new GridView.LayoutParams(300,300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8,8,8,8);
-            imageView.setTag(Integer.valueOf(position));
-//            imageButton.setAttribute(View_onClick, "imageSelected");
-
         } else {
             imageView=(ImageView) convertView;
         }
 
+        imageView.setTag(Integer.valueOf(position));
 
 
         if(category.equals("foodIds")) {
@@ -127,15 +123,13 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.water1, R.drawable.water2, R.drawable.water3, R.drawable.water4, R.drawable.water5, R.drawable.water6,
             R.drawable.water7, R.drawable.water8, R.drawable.water9, R.drawable.water10
     };
-    private Integer familyIds[] = {
+    private Integer[] familyIds = {
             R.drawable.family1, R.drawable.family2, R.drawable.family3, R.drawable.family4, R.drawable.family5, R.drawable.family6,
             R.drawable.family7, R.drawable.family8, R.drawable.family9, R.drawable.family10
 
     };
     private Integer technologyIds[] = {
-            R.drawable.technology1, R.drawable.technology2, R.drawable.technology3, R.drawable.technology4, R.drawable.technology5,
-            R.drawable.technology6, R.drawable.technology7, R.drawable.technology8, R.drawable.technology9, R.drawable.technology10
-
+            R.drawable.technology1, R.drawable.technology2, 
     };
     private Integer commuteIds[] = {
             R.drawable.commute1, R.drawable.commute2, R.drawable.commute3, R.drawable.commute4, R.drawable.commute5, R.drawable.commute6,
