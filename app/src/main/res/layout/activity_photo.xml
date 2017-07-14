@@ -24,13 +24,6 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"/>
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
