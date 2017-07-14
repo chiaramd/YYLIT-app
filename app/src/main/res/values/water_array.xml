@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="WaterArray">
-        <item>@drawable/hunger2</item>
-        <item>@drawable/hunger1</item>
+        <item>@drawable/water1</item>
+        <item>@drawable/water2</item>
+        <item>@drawable/water3</item>
+        <item>@drawable/water4</item>
+        <item>@drawable/water5</item>
+        <item>@drawable/water6</item>
+        <item>@drawable/water7</item>
+        <item>@drawable/water8</item>
+        <item>@drawable/water9</item>
+        <item>@drawable/water10</item>
+
     </array>
 
 </resources>
