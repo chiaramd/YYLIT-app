@@ -31,19 +31,22 @@ public class ImageAdapter extends BaseAdapter {
 
     }
     public int getCount() {
-        if(category == "foodIds") {
+        if(category.equals("foodIds")) {
+            Log.d("TAG13", "Food");
             return foodIds.length;
-        } else if(category == "workIds") {
+        } else if(category.equals("workIds")) {
             return workIds.length;
-        } else if(category == "technologyIds") {
+        } else if(category.equals("technologyIds")) {
             return technologyIds.length;
-        } else if(category == "commuteIds") {
+        } else if(category.equals("commuteIds")) {
             return commuteIds.length;
-        } else if(category == "familyIds") {
+        } else if(category.equals("familyIds")) {
             return familyIds.length;
-        } else if(category == "waterIds") {
+        } else if(category.equals("waterIds")) {
             return waterIds.length;
         } else {
+            Log.d("TAG12", "ITS NOT WORKING");
+
             return 0;
         }
 
@@ -57,17 +60,17 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     public int getDrawableName(int position) {
-        if(category == "foodIds") {
+        if(category.equals("foodIds")) {
             return foodIds[position];
-        } else if(category == "workIds") {
+        } else if(category.equals("workIds")) {
             return workIds[position];
-        } else if(category == "technologyIds") {
+        } else if(category.equals("technologyIds")) {
             return technologyIds[position];
-        } else if(category == "commuteIds") {
+        } else if(category.equals("commuteIds")) {
             return commuteIds[position];
-        } else if(category == "familyIds") {
+        } else if(category.equals("familyIds")) {
             return familyIds[position];
-        } else if(category == "waterIds") {
+        } else if(category.equals("waterIds")) {
             return waterIds[position];
         } else {
             return 0;
@@ -80,7 +83,7 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView==null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85,85));
+            imageView.setLayoutParams(new GridView.LayoutParams(300,300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8,8,8,8);
             imageView.setTag(Integer.valueOf(position));
@@ -92,17 +95,17 @@ public class ImageAdapter extends BaseAdapter {
 
 
 
-        if(category == "foodIds") {
+        if(category.equals("foodIds")) {
             imageView.setImageResource(foodIds[position]);
-        } else if(category == "workIds") {
+        } else if(category.equals("workIds")) {
             imageView.setImageResource(workIds[position]);
-        } else if(category == "technologyIds") {
+        } else if(category.equals("technologyIds")) {
             imageView.setImageResource(technologyIds[position]);
-        } else if(category == "commuteIds") {
+        } else if(category.equals("commuteIds")) {
             imageView.setImageResource(commuteIds[position]);
-        } else if(category == "familyIds") {
+        } else if(category.equals("familyIds")) {
             imageView.setImageResource(familyIds[position]);
-        } else if(category == "waterIds") {
+        } else if(category.equals("waterIds")) {
             imageView.setImageResource(waterIds[position]);
         }
         return imageView;
