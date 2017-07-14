@@ -12,7 +12,7 @@
         android:id="@+id/topBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorPressedHighlight"
+        android:background="@color/Orange"
         android:fontFamily="monospace"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
@@ -35,6 +35,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/android"/>
+        android:background="@android:color/black"
+        app:srcCompat="@drawable/android" />
 
 </LinearLayout>
