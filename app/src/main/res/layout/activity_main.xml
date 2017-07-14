@@ -11,8 +11,8 @@
         android:id="@+id/topBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorPressedHighlight"
-        android:fontFamily="monospace"
+        android:background="@color/Orange"
+        android:fontFamily="serif-monospace"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/yylit"
@@ -28,13 +28,14 @@
         android:id="@+id/underTopBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif-monospace"
         android:text="@string/sub_heading"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/black"
-        android:layout_marginTop="10dp"
-        android:textSize="14sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ScrollView
 
@@ -60,7 +61,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
                 android:background="@android:color/holo_blue_dark"
-                android:fontFamily="sans-serif"
+                android:fontFamily="casual"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/foodChoice"
@@ -79,7 +80,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="30dp"
                 android:background="@android:color/holo_blue_dark"
-                android:fontFamily="sans-serif"
+                android:fontFamily="casual"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/waterChoice"
@@ -91,7 +92,6 @@
 
             <Button
                 android:id="@+id/btnWork"
-                android:onClick="btnWork"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -99,7 +99,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
-                android:fontFamily="sans-serif"
+                android:fontFamily="casual"
+                android:onClick="btnWork"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/workChoice"
@@ -111,7 +112,6 @@
 
             <Button
                 android:id="@+id/btnTechnology"
-                android:onClick="btnTechnology"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -119,6 +119,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:fontFamily="casual"
+                android:onClick="btnTechnology"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/technologyChoice"
@@ -129,7 +131,6 @@
 
             <Button
                 android:id="@+id/btnFamily"
-                android:onClick="btnFamily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -137,6 +138,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:fontFamily="casual"
+                android:onClick="btnFamily"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/familyChoice"
@@ -147,7 +150,6 @@
 
             <Button
                 android:id="@+id/btnCommute"
-                android:onClick="btnCommute"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -155,6 +157,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@android:color/holo_blue_dark"
+                android:fontFamily="casual"
+                android:onClick="btnCommute"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:text="@string/commuteChoice"
