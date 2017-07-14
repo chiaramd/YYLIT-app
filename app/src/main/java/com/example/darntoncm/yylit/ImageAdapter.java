@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.example.gwc.yylit.R;
 import com.picture.PhotoActivity;
 
+import static android.R.attr.drawable;
 import static android.R.attr.id;
 import static com.example.gwc.yylit.R.array.apptour;
 
@@ -137,7 +138,8 @@ public class ImageAdapter extends BaseAdapter {
 
     };
     private Integer commuteIds[] = {
-            R.drawable.commute1,
+            R.drawable.commute1, R.drawable.commute2, R.drawable.commute3, R.drawable.commute4, R.drawable.commute5, R.drawable.commute6,
+            R.drawable.commute7, R.drawable.commute8, R.drawable.commute9, R.drawable.commute10
 
     };
 
