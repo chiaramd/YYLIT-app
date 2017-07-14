@@ -27,23 +27,24 @@ public class MainActivity extends AppCompatActivity {
         btnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(changeScreen);
                 String FOOD = "Food";
                 changeScreen.putExtra("title_string", FOOD);
                 String foodIds = "foodIds";
                 changeScreen.putExtra("array_name", foodIds);
-               }
+                MainActivity.this.startActivity(changeScreen);
+            }
           });
 
         Button btnWater = (Button) findViewById(R.id.btnWater);
-        btnFood.setOnClickListener(new View.OnClickListener() {
+        btnWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(changeScreen);
-                String WATER = "@id/waterChoice";
-                    changeScreen.putExtra("title_string", WATER);
+                String WATER = "Water";
+                changeScreen.putExtra("title_string", WATER);
                 String waterIds = "waterIds";
                 changeScreen.putExtra("array_name", waterIds);
+                MainActivity.this.startActivity(changeScreen);
+
             }
         });
 
@@ -51,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
         btnWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.startActivity(changeScreen);
                 String WORK = "Work";
                 changeScreen.putExtra("title_string", WORK);
                 String workIds = "workIds";
                 changeScreen.putExtra("array_name", workIds);
+                MainActivity.this.startActivity(changeScreen);
             }
         });
 
@@ -63,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
         btnTechnology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.startActivity(changeScreen);
                 String TECHNOLOGY = "Technology";
                 changeScreen.putExtra("title_string", TECHNOLOGY);
                 String technologyIds = "technologyIds";
                 changeScreen.putExtra("array_name", technologyIds);
+                MainActivity.this.startActivity(changeScreen);
             }
         });
 
@@ -75,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
         btnFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.startActivity(changeScreen);
                 String FAMILY = "Family";
                 changeScreen.putExtra("title_string", FAMILY);
                 String familyIds = "familyIds";
                 changeScreen.putExtra("array_name", familyIds);
+                MainActivity.this.startActivity(changeScreen);
             }
         });
 
@@ -87,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
         btnCommute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.startActivity(changeScreen);
                 String COMMUTE = "Commute";
                 changeScreen.putExtra("title_string", COMMUTE);
                 String commuteIds = "commuteIds";
                 changeScreen.putExtra("array_name", commuteIds);
+                MainActivity.this.startActivity(changeScreen);
             }
         });
 

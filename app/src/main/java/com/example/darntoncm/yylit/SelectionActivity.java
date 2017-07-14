@@ -31,33 +31,22 @@ public class SelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
+// Create Activity
         super.onCreate(savedInstanceState);
-
-
-        Intent getTitle = getIntent();
-        String title = getTitle.getStringExtra("title_string");
-
-
-        TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
-        myAwesomeTextView.setText(title);
-
-
-
         setContentView(R.layout.activity_selection);
 
-
+// set title to string from Main Activity
+        Intent getTitle = getIntent();
+        String title = getTitle.getStringExtra("title_string");
+        TextView myAwesomeTextView = (TextView)findViewById(R.id.categoryTitle);
+        myAwesomeTextView.setText(title);
+// get name of category to draw pictures from
         Intent getCategoryNameFromEllie = getIntent();
         String arrayName = getCategoryNameFromEllie.getStringExtra("array_name");
+
+
 //        String arrayName = "foodIds";
 
-
-//        public static String arrayName = getCategoryNameFromEllie.getExtra("ELLIE--FILL IN THE ID HERE. IT SHOULD BE IN THE FORM OF foodIds, workIds, etc. BECAUSE BRIANA IS MAKING THOSE ARRAYS WITH IMAGE");
-
-//        public static String test = "Hello World";
-
-
-        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         final GridView gridview = (GridView) findViewById(R.id.gridview);
         final ImageAdapter myImageAdapter = new ImageAdapter(this);
         //get category from intent and pass to this function as a string
@@ -66,31 +55,19 @@ public class SelectionActivity extends AppCompatActivity {
         gridview.setAdapter(myImageAdapter);
 
 
-
-
-
+// initiate random generator button, set on click method
+        Button btnRandomGenerate = (Button) (findViewById(R.id.btnRandomGenerate));
         btnRandomGenerate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
                 Log.d("TAG", "Random Generation");
-                //code to randomly generate image
-//                ImageView img=(ImageView)findViewById(R.id.imageButton);
-//
+// randomly generate image
                 final TypedArray imgs = getResources().obtainTypedArray(R.array.apptour);
                 final Random rand = new Random();
                 final int rndInt = rand.nextInt(imgs.length());
                 final int resID = imgs.getResourceId(rndInt, 0);
                 String randomID = getResources().getResourceEntryName(resID);
-
                 Log.d("TAG2", randomID);
-
-//                Random rand = new Random();
-//                int rndInt = rand.nextInt(52) + 1;
-//                String drawableName = "hunger" + rndInt;
-//                int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
-//                img.setImageResource(resID);
-
+// send image ID to Photo Activity
                 Intent sendRandomPic = new Intent(SelectionActivity.this, PhotoActivity.class);
                 sendRandomPic.putExtra("pic_name", resID);
 

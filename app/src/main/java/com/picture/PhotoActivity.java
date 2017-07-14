@@ -2,6 +2,7 @@ package com.picture;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -27,7 +28,9 @@ public class PhotoActivity extends AppCompatActivity {
         String picID = getResources().getResourceEntryName(variable);
 
 
-        Drawable drawable = getDrawable(variable);
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
+
+
         myImage.setImageDrawable(drawable);
 
 
