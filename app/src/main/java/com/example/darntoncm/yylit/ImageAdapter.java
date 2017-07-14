@@ -127,9 +127,19 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.water7, R.drawable.water8, R.drawable.water9, R.drawable.water10
     };
     private Integer familyIds[] = {
-            R.drawable.family1, R.drawable.family2   };
-    private Integer technologyIds[] = {};
-    private Integer commuteIds[] = {};
+            R.drawable.family1, R.drawable.family2, R.drawable.family3, R.drawable.family4, R.drawable.family5, R.drawable.family6,
+            R.drawable.family7, R.drawable.family8, R.drawable.family9, R.drawable.family10
+
+    };
+    private Integer technologyIds[] = {
+            R.drawable.technology1, R.drawable.technology2, R.drawable.technology3, R.drawable.technology4, R.drawable.technology5,
+            R.drawable.technology6, R.drawable.technology7, R.drawable.technology8, R.drawable.technology9, R.drawable.technology10
+
+    };
+    private Integer commuteIds[] = {
+            R.drawable.commute1,
+
+    };
 
 
 }
