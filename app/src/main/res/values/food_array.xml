@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="FoodArray">
-        <item>@drawable/hunger2</item>
         <item>@drawable/hunger1</item>
+        <item>@drawable/hunger2</item>
+        <item>@drawable/hunger3</item>
+        <item>@drawable/hunger4</item>
+        <item>@drawable/hunger5</item>
+        <item>@drawable/hunger6</item>
+        <item>@drawable/hunger7</item>
+        <item>@drawable/hunger8</item>
+        <item>@drawable/hunger9</item>
+        <item>@drawable/hunger10</item>
+
     </array>
 
 </resources>
