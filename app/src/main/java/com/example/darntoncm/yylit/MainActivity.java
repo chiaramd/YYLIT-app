@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String FOOD = "Food";
+                String FOOD = "I\'m hungry...";
                 changeScreen.putExtra("title_string", FOOD);
                 String foodIds = "foodIds";
                 changeScreen.putExtra("array_name", foodIds);
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String WATER = "Water";
+                String WATER = "I\'m thirsty...";
                 changeScreen.putExtra("title_string", WATER);
                 String waterIds = "waterIds";
                 changeScreen.putExtra("array_name", waterIds);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btnWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String WORK = "Work";
+                String WORK = "Work is crushing my soul...";
                 changeScreen.putExtra("title_string", WORK);
                 String workIds = "workIds";
                 changeScreen.putExtra("array_name", workIds);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btnTechnology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String TECHNOLOGY = "Technology";
+                String TECHNOLOGY = "My phone/laptop/tablet won\'t work...";
                 changeScreen.putExtra("title_string", TECHNOLOGY);
                 String technologyIds = "technologyIds";
                 changeScreen.putExtra("array_name", technologyIds);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         btnFamily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String FAMILY = "Family";
+                String FAMILY = "My family is a nightmare...";
                 changeScreen.putExtra("title_string", FAMILY);
                 String familyIds = "familyIds";
                 changeScreen.putExtra("array_name", familyIds);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnCommute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String COMMUTE = "Commute";
+                String COMMUTE = "This traffic is ridiculous...";
                 changeScreen.putExtra("title_string", COMMUTE);
                 String commuteIds = "commuteIds";
                 changeScreen.putExtra("array_name", commuteIds);

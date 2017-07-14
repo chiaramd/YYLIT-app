@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Yes, Your Life Is Terrible</string>
-    <string name="foodChoice">FOOD</string>
-    <string name="technologyChoice">TECHNOLOGY</string>
-    <string name="commuteChoice">COMMUTE</string>
-    <string name="waterChoice">WATER</string>
+    <string name="foodChoice">I\'m hungry...</string>
+    <string name="technologyChoice">My phone/laptop/tablet won\'t work...</string>
+    <string name="commuteChoice">This traffic is ridiculous...</string>
+    <string name="waterChoice">I\'m thirsty...</string>
     <string name="parentsChoice">PARENTS</string>
-    <string name="familyChoice">FAMILY</string>
-    <string name="workChoice">WORK</string>
+    <string name="familyChoice">My family is a nightmare...</string>
+    <string name="workChoice">Work is crushing my soul...</string>
     <string name="btnGeneratePic">Generate a Random Picture</string>
     <string name="browseForPic">Or just browse for a picture that captures your life\'s problems.</string>
 
@@ -18,6 +18,7 @@
         <item>Send with friends</item>
     </string-array>"
 
-    <string name="yylit">Yes, Your Life Is Terrible</string>
+    <string name="yylit">Why is your life so terrible?</string>
+    <string name="sub_heading">Select the button that describes your struggles</string>
 
 </resources>
