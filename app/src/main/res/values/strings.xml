@@ -11,12 +11,14 @@
     <string name="browseForPic">Or just browse for a picture that captures your life\'s problems.</string>
     <string name="gallery">Save to Gallery</string>
     <string name="friends">Send to Friends</string>
+    <string name="caption">Add a Caption</string>
 
 
 
     <string-array name="names">
         <item>Save to gallery</item>
         <item>Send with friends</item>
+        <item>Add a Caption</item>
     </string-array>"
 
     <string name="yylit">Why Is Your Life So Terrible?</string>

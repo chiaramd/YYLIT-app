@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -20,9 +21,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.darntoncm.yylit.MainActivity;
@@ -33,10 +34,32 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
 
+import static com.example.gwc.yylit.R.id.btnCaption;
 import static com.example.gwc.yylit.R.id.imageView;
 
 public class PhotoActivity extends AppCompatActivity {
-    Bitmap anImage;
+
+    public BitmapDrawable addCaption(BitmapDrawable background, Bitmap Foreground){
+        int width = 0, height = 0;
+        Bitmap Caption;
+
+        width = getWindowManager().getDefaultDisplay().getWidth();
+
+    }
+
+
+    Button btnCaption = (Button) findViewById(R.id.btnCaption);
+        btnCaption.setOnClickListener(new View.OnClickListener() {
+
+        public void (onClick(View v) {
+            btnCaption.setVisibility(View.INVISIBLE);
+
+
+
+        });
+    });
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -97,6 +120,7 @@ public class PhotoActivity extends AppCompatActivity {
                 break;
             case R.id.send_to_friends:
                 break;
+
 //                deleteNote(info.id);
         }
         return super.onContextItemSelected(item);
