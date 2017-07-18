@@ -1,6 +1,7 @@
 package com.picture;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -31,12 +32,14 @@ import com.example.gwc.yylit.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Random;
 
 import static com.example.gwc.yylit.R.id.imageView;
 
 public class PhotoActivity extends AppCompatActivity {
     Bitmap anImage;
+    String picID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -51,7 +54,7 @@ public class PhotoActivity extends AppCompatActivity {
         //CHECK IF WORKS WITH OTHER ACTIVITY!!!
         Intent getimage = getIntent();
         int variable = getimage.getIntExtra("pic_name",0);  //add parameters
-        String picID = getResources().getResourceEntryName(variable);
+        picID = getResources().getResourceEntryName(variable);
 
 
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
@@ -96,6 +99,17 @@ public class PhotoActivity extends AppCompatActivity {
 
                 break;
             case R.id.send_to_friends:
+
+                Intent picMessageIntent = new Intent(android.content.Intent.ACTION_SEND);
+                picMessageIntent.setType("image/jpeg");
+
+                Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/" + picID);
+                picMessageIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+
+                startActivity(Intent.createChooser(picMessageIntent, "Share images to..."));
+
+
+
                 break;
 //                deleteNote(info.id);
         }
