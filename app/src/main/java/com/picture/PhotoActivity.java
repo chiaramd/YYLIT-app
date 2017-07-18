@@ -2,6 +2,7 @@ package com.picture;
 
 import android.Manifest;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -44,12 +45,14 @@ import java.net.URL;
 import java.util.Random;
 
 import static com.example.gwc.yylit.R.id.imageView;
+import static com.example.gwc.yylit.R.id.parent;
 
 public class PhotoActivity extends AppCompatActivity {
 
 
     public Button btnCaption;
     public TextView resultText;
+    Context context = this;
 
     Bitmap anImage;
     String picID;
@@ -67,8 +70,9 @@ public class PhotoActivity extends AppCompatActivity {
         resultText = (TextView) findViewById(R.id.result);
 
         btnCaption.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
+                Log.i("TAGJDKAL", "btnCaption is working");
+
                 showInputDialog();
             }
         });
@@ -104,9 +108,13 @@ public class PhotoActivity extends AppCompatActivity {
         LayoutInflater layoutInflater = LayoutInflater.from(PhotoActivity.this);
         View promptView = layoutInflater.inflate(R.layout.input_caption, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PhotoActivity.this);
-        alertDialogBuilder.setView(promptView);
+        Log.i("TAGEJKLSLDKF", "setView to promptView in alertDialogBuilder");
+
 
         final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+
+        alertDialogBuilder.setView(promptView);
+
         alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 resultText.setText(R.string.caption_Added);
@@ -114,7 +122,7 @@ public class PhotoActivity extends AppCompatActivity {
 
                 try {
                     URL url = new URL(name);
-                    Drawable captiondraw = new BitmapDrawable(BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+                    Drawable captiondraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
 
                 } catch (Exception ex) {}
 
@@ -125,6 +133,7 @@ public class PhotoActivity extends AppCompatActivity {
                 btnCaption.setVisibility(View.INVISIBLE);
             }
         });
+        alertDialogBuilder.show();
     }
 
 
