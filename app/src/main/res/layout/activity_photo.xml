@@ -27,8 +27,38 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="449dp"
         android:background="@android:color/black"
         app:srcCompat="@drawable/android" />
 
+
+
+    <Button
+        android:id="@+id/btnCaption"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:fontFamily="monospace"
+        android:text="@string/caption"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

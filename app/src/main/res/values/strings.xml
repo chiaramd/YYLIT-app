@@ -11,6 +11,10 @@
     <string name="browseForPic">Or just browse for a picture that captures your life\'s problems.</string>
     <string name="gallery">Save to Gallery</string>
     <string name="friends">Send to Friends</string>
+    <string name="enterCaption">Enter caption here ...</string>
+    <string name="caption_Added">Caption Added.</string>
+    <string name="caption">Add a caption...</string>
+
 
 
 
