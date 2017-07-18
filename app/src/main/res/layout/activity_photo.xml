@@ -8,21 +8,21 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <TextView
-        android:id="@+id/topBanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/Orange"
-        android:fontFamily="monospace"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:text="@string/yylit"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/white"
-        android:textColorLink="@android:color/white"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+    <!--<TextView-->
+        <!--android:id="@+id/topBanner"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/Orange"-->
+        <!--android:fontFamily="monospace"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:paddingTop="10dp"-->
+        <!--android:text="@string/yylit"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:textColorLink="@android:color/white"-->
+        <!--android:textSize="28sp"-->
+        <!--android:textStyle="bold" />-->
 
 
 
@@ -53,5 +53,15 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+

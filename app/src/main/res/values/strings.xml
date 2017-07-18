@@ -12,8 +12,6 @@
     <string name="gallery">Save to Gallery</string>
     <string name="friends">Send to Friends</string>
     <string name="caption">Add a Caption</string>
-    <string name="caption_added">Caption Added</string>
-
 
 
     <string-array name="names">
@@ -24,7 +22,7 @@
 
     <string name="yylit">Why Is Your Life So Terrible?</string>
     <string name="sub_heading">Select the button that describes your struggles</string>
-    <string name="enterCaption">Enter Caption Here ...</string>
+    <string name="enterCaption">Enter Caption Here …</string>
     <string name="caption_Added">Caption Added</string>
 
 </resources>
