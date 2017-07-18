@@ -102,8 +102,9 @@ public class PhotoActivity extends AppCompatActivity {
 
                 Intent picMessageIntent = new Intent(android.content.Intent.ACTION_SEND);
                 picMessageIntent.setType("image/jpeg");
+                Log.d("TAG40", picID);
 
-                Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/" + picID);
+                Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/drawable/" + picID);
                 picMessageIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
 
                 startActivity(Intent.createChooser(picMessageIntent, "Share images to..."));
