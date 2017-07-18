@@ -1,9 +1,12 @@
 package com.picture;
 
 import android.Manifest;
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -12,17 +15,22 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.darntoncm.yylit.MainActivity;
@@ -31,27 +39,46 @@ import com.example.gwc.yylit.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Random;
 
 import static com.example.gwc.yylit.R.id.imageView;
 
 public class PhotoActivity extends AppCompatActivity {
+
+
+    public Button btnCaption;
+    public TextView resultText;
+
     Bitmap anImage;
+    String picID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        EditText caption = (EditText) findViewById(R.id.edittext);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
 //        Log.d("TAG24", "activity started");
 
 
+        btnCaption=(Button) findViewById(R.id.btnCaption);
+        resultText = (TextView) findViewById(R.id.result);
+
+        btnCaption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInputDialog();
+            }
+        });
 
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
 
         //CHECK IF WORKS WITH OTHER ACTIVITY!!!
         Intent getimage = getIntent();
         int variable = getimage.getIntExtra("pic_name",0);  //add parameters
-        String picID = getResources().getResourceEntryName(variable);
+        picID = getResources().getResourceEntryName(variable);
 
 
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
@@ -71,6 +98,35 @@ public class PhotoActivity extends AppCompatActivity {
 //        mySpinner.setAdapter(myAdapter);
 
     }
+
+
+    protected void showInputDialog() {
+        LayoutInflater layoutInflater = LayoutInflater.from(PhotoActivity.this);
+        View promptView = layoutInflater.inflate(R.layout.input_caption, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PhotoActivity.this);
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                resultText.setText(R.string.caption_Added);
+                String name = editText.getText().toString();
+
+                try {
+                    URL url = new URL(name);
+                    Drawable captiondraw = new BitmapDrawable(BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+
+                } catch (Exception ex) {}
+
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+                btnCaption.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -96,6 +152,18 @@ public class PhotoActivity extends AppCompatActivity {
 
                 break;
             case R.id.send_to_friends:
+
+                Intent picMessageIntent = new Intent(android.content.Intent.ACTION_SEND);
+                picMessageIntent.setType("image/jpeg");
+                Log.d("TAG40", picID);
+
+                Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/drawable/" + picID);
+                picMessageIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+
+                startActivity(Intent.createChooser(picMessageIntent, "Share images to..."));
+
+
+
                 break;
 //                deleteNote(info.id);
         }
