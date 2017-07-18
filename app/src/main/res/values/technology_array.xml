@@ -2,6 +2,16 @@
 <resources>
     <array name="TechArray">
         <item>@drawable/technology1</item>
+        <item>@drawable/technology2</item>
+        <item>@drawable/technology3</item>
+        <item>@drawable/technology4</item>
+        <item>@drawable/technology5</item>
+        <item>@drawable/technology6</item>
+        <item>@drawable/technology7</item>
+        <item>@drawable/technology8</item>
+        <item>@drawable/technology9</item>
+        <item>@drawable/technology10</item>
+
     </array>
 
 </resources>

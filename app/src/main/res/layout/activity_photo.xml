@@ -27,7 +27,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="449dp"
+        android:layout_height="309dp"
         android:background="@android:color/black"
         app:srcCompat="@drawable/android" />
 
@@ -36,7 +36,7 @@
     <Button
         android:id="@+id/btnCaption"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="76dp"
         android:background="@android:color/black"
         android:fontFamily="monospace"
         android:text="@string/caption"
@@ -47,9 +47,13 @@
 
     <TextView
         android:id="@+id/result"
+        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:background="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="0.21" />
+
 </LinearLayout>
 
 

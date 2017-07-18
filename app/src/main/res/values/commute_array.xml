@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="CommuteArray">
-        <item>@drawable/hunger2</item>
-        <item>@drawable/hunger1</item>
+        <item>@drawable/commute1</item>
+        <item>@drawable/commute2</item>
+        <item>@drawable/commute3</item>
+        <item>@drawable/commute4</item>
+        <item>@drawable/commute5</item>
+        <item>@drawable/commute6</item>
+        <item>@drawable/commute7</item>
+        <item>@drawable/commute8</item>
+        <item>@drawable/commute9</item>
+        <item>@drawable/commute10</item>
+
     </array>
 
 </resources>
