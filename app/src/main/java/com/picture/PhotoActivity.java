@@ -9,7 +9,10 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -55,7 +58,7 @@ public class PhotoActivity extends AppCompatActivity {
 
 
     public Button btnCaption;
-    public TextView resultText;
+//    public TextView resultText;
     Context context = this;
 
     Bitmap anImage;
@@ -71,7 +74,6 @@ public class PhotoActivity extends AppCompatActivity {
 
 
         btnCaption=(Button) findViewById(R.id.btnCaption);
-        resultText = (TextView) findViewById(R.id.result);
 
         btnCaption.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -106,6 +108,44 @@ public class PhotoActivity extends AppCompatActivity {
 //        mySpinner.setAdapter(myAdapter);
 
     }
+    public BitmapDrawable textOverlay(String name, Bitmap anImage) {
+
+
+        Bitmap bmOverlay = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+
+        Log.i("TAGA", "1");
+
+
+
+        Canvas canvas = new Canvas(bmOverlay);
+        Log.i("TAGB", "2");
+
+        Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
+        Paint paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setTypeface(tf);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
+        Rect textRect = new Rect();
+        paint.getTextBounds(name, 0, name.length(), textRect);
+
+        Log.i("TAGC", "3");
+
+        canvas.drawText(name, 100, 100, paint);
+
+        Log.i("TAGD", "4");
+
+        Drawable newDrawable = new BitmapDrawable(getResources(), anImage);
+
+        ImageView myImage = (ImageView) findViewById(R.id.imageView);
+
+
+        myImage.setImageDrawable(newDrawable);
+
+        return new BitmapDrawable(getResources(), anImage);
+
+
+    }
 
 
     protected void showInputDialog() {
@@ -122,15 +162,23 @@ public class PhotoActivity extends AppCompatActivity {
         alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 //                resultText.setText(R.string.caption_Added);
+
+                Log.i("TAGf", "6");
                 String name = editText.getText().toString();
-                btnCaption.setVisibility(View.INVISIBLE);
+                Log.i("TAGg", "7");
+
+                btnCaption.setVisibility(View.GONE);
+
+                Log.i("TAGh", "8");
+
+                textOverlay(name, anImage);
+
+
 //                URL url = new URL(name);
-                Canvas c = new Canvas(anImage);
-                Paint White = new Paint();
-                int myColor = ContextCompat.getColor(context, white);
-                White.setColor(myColor);
-                White.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
-                c.drawText(name, 100, 100, White);
+
+
+
+
 
 //                try {
 //                    URL url = new URL(name);
