@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -42,7 +43,6 @@ public class PhotoActivity extends AppCompatActivity {
 
 
     public Button btnCaption;
-    public TextView resultText;
     Context context = this;
 
     Bitmap anImage;
@@ -57,7 +57,6 @@ public class PhotoActivity extends AppCompatActivity {
 
 
         btnCaption=(Button) findViewById(R.id.btnCaption);
-        resultText = (TextView) findViewById(R.id.result);
 
         btnCaption.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -102,11 +101,12 @@ public class PhotoActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 String name = editText.toString();
                 btnCaption.setVisibility(View.INVISIBLE);
-                URL url = new URL(name);
+//                URL url = new URL(name);
 //                Drawable captionDraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
                 Canvas c = new Canvas(anImage);
                 Paint White = new Paint();
-                int myColor = context.getResources().getColor(white);
+                int myColor = ContextCompact.getColor(white);
+                White.setTypeface(Typeface )
                 White.setColor(myColor);
                 White.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
                 c.drawText(name, 100, 100, White);
@@ -119,7 +119,7 @@ public class PhotoActivity extends AppCompatActivity {
         });
         alertDialogBuilder.show();
     }
-
+    Drawable d = new BitmapDrawable(getResources(), anImage);
 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
