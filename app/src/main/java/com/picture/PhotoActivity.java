@@ -114,6 +114,8 @@ public class PhotoActivity extends AppCompatActivity {
     public void textOverlay(String name, Bitmap anImage) {
 
 
+
+
 //        Bitmap result = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
 //        Canvas canvas = new Canvas(result);
 //        canvas.drawBitmap(anImage, 0, 0, null);
@@ -121,12 +123,10 @@ public class PhotoActivity extends AppCompatActivity {
 
 //        Bitmap bmOverlay = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
 
-        Log.i("TAGA", "1");
 
 
 
 //        Canvas canvas = new Canvas(bmOverlay);
-        Log.i("TAGB", "2");
 
 
         //Should be good
@@ -137,8 +137,10 @@ public class PhotoActivity extends AppCompatActivity {
         paint.setTypeface(tf);
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
-        Rect textRect = new Rect();
+        Rect textRect = new Rect(10, 10, 200, 100);
         paint.getTextBounds(name, 0, name.length(), textRect);
+
+
 //        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OVER));
 
         Log.i("TAGC", "3");
@@ -146,8 +148,24 @@ public class PhotoActivity extends AppCompatActivity {
         Bitmap tempBitmap = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(tempBitmap);
         canvas.drawBitmap(anImage,0,0,null);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.BLACK);
+        canvas.drawRect(textRect, paint);
 
-        canvas.drawText(name, 100, 100, paint);
+
+
+        int xPos = (canvas.getWidth() / 2);
+        int yPos = (int) ((canvas.getHeight() / 10 * 9) - ((paint.descent() +
+                paint.ascent()) / 2)) ;
+
+
+
+
+
+
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(100);
+        canvas.drawText(name, xPos, yPos, paint);
 
         Log.i("TAGD", "4");
 
