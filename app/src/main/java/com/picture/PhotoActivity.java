@@ -11,6 +11,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
@@ -63,6 +65,7 @@ public class PhotoActivity extends AppCompatActivity {
 
     Bitmap anImage;
     String picID;
+    Drawable drawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -91,7 +94,7 @@ public class PhotoActivity extends AppCompatActivity {
         picID = getResources().getResourceEntryName(variable);
 
 
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
+        drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
         anImage = ((BitmapDrawable) drawable).getBitmap();
 
 
@@ -108,41 +111,59 @@ public class PhotoActivity extends AppCompatActivity {
 //        mySpinner.setAdapter(myAdapter);
 
     }
-    public BitmapDrawable textOverlay(String name, Bitmap anImage) {
+    public void textOverlay(String name, Bitmap anImage) {
 
 
-        Bitmap bmOverlay = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+//        Bitmap result = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+//        Canvas canvas = new Canvas(result);
+//        canvas.drawBitmap(anImage, 0, 0, null);
+
+
+//        Bitmap bmOverlay = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
 
         Log.i("TAGA", "1");
 
 
 
-        Canvas canvas = new Canvas(bmOverlay);
+//        Canvas canvas = new Canvas(bmOverlay);
         Log.i("TAGB", "2");
+
+
+        //Should be good
 
         Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
         Paint paint = new Paint();
-        paint.setColor(Color.WHITE);
+        paint.setColor(Color.BLACK);
         paint.setTypeface(tf);
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
         Rect textRect = new Rect();
         paint.getTextBounds(name, 0, name.length(), textRect);
+//        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OVER));
 
         Log.i("TAGC", "3");
+
+        Bitmap tempBitmap = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(tempBitmap);
+        canvas.drawBitmap(anImage,0,0,null);
 
         canvas.drawText(name, 100, 100, paint);
 
         Log.i("TAGD", "4");
 
-        Drawable newDrawable = new BitmapDrawable(getResources(), anImage);
+
+
+//        Drawable newDrawable = new BitmapDrawable(getResources(), anImage);
 
         ImageView myImage = (ImageView) findViewById(R.id.imageView);
 
+        myImage.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
+//        myImage.setImageDrawable(newDrawable);
 
-        myImage.setImageDrawable(newDrawable);
-
-        return new BitmapDrawable(getResources(), anImage);
+//        return new BitmapDrawable(getResources(), anImage);
+//        myImage.setImageBitmap(result);
+//
+//        return result;
 
 
     }
