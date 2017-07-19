@@ -109,7 +109,15 @@ public class PhotoActivity extends AppCompatActivity {
                 White.setTypeface(Typeface )
                 White.setColor(myColor);
                 White.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
+
+                Bitmap result = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+                Canvas canvas = new Canvas(result);
+                canvas.drawBitmap(anImage, 0f, 0f, null);
+                canvas.drawText(name, 10, 10, White);
+                return result;
+
                 c.drawText(name, 100, 100, White);
+                c.setBitmap(anImage);
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int id) {
