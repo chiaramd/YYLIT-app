@@ -8,6 +8,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -44,6 +51,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Random;
 
+import static android.R.color.white;
+import static android.graphics.Paint.EMBEDDED_BITMAP_TEXT_FLAG;
 import static com.example.gwc.yylit.R.id.imageView;
 import static com.example.gwc.yylit.R.id.parent;
 
@@ -51,11 +60,12 @@ public class PhotoActivity extends AppCompatActivity {
 
 
     public Button btnCaption;
-    public TextView resultText;
+//    public TextView resultText;
     Context context = this;
 
     Bitmap anImage;
     String picID;
+    Drawable drawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -67,7 +77,6 @@ public class PhotoActivity extends AppCompatActivity {
 
 
         btnCaption=(Button) findViewById(R.id.btnCaption);
-        resultText = (TextView) findViewById(R.id.result);
 
         btnCaption.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -85,7 +94,7 @@ public class PhotoActivity extends AppCompatActivity {
         picID = getResources().getResourceEntryName(variable);
 
 
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
+        drawable = ContextCompat.getDrawable(getApplicationContext(), variable);
         anImage = ((BitmapDrawable) drawable).getBitmap();
 
 
@@ -100,6 +109,62 @@ public class PhotoActivity extends AppCompatActivity {
 //          android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
 //        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        mySpinner.setAdapter(myAdapter);
+
+    }
+    public void textOverlay(String name, Bitmap anImage) {
+
+
+//        Bitmap result = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+//        Canvas canvas = new Canvas(result);
+//        canvas.drawBitmap(anImage, 0, 0, null);
+
+
+//        Bitmap bmOverlay = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), anImage.getConfig());
+
+        Log.i("TAGA", "1");
+
+
+
+//        Canvas canvas = new Canvas(bmOverlay);
+        Log.i("TAGB", "2");
+
+
+        //Should be good
+
+        Typeface tf = Typeface.create("Helvetica", Typeface.BOLD);
+        Paint paint = new Paint();
+        paint.setColor(Color.BLACK);
+        paint.setTypeface(tf);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
+        Rect textRect = new Rect();
+        paint.getTextBounds(name, 0, name.length(), textRect);
+//        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OVER));
+
+        Log.i("TAGC", "3");
+
+        Bitmap tempBitmap = Bitmap.createBitmap(anImage.getWidth(), anImage.getHeight(), Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(tempBitmap);
+        canvas.drawBitmap(anImage,0,0,null);
+
+        canvas.drawText(name, 100, 100, paint);
+
+        Log.i("TAGD", "4");
+
+
+
+//        Drawable newDrawable = new BitmapDrawable(getResources(), anImage);
+
+        ImageView myImage = (ImageView) findViewById(R.id.imageView);
+
+        myImage.setImageDrawable(new BitmapDrawable(getResources(), tempBitmap));
+//        myImage.setImageDrawable(newDrawable);
+
+//        return new BitmapDrawable(getResources(), anImage);
+//        myImage.setImageBitmap(result);
+//
+//        return result;
+
 
     }
 
@@ -117,14 +182,30 @@ public class PhotoActivity extends AppCompatActivity {
 
         alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                resultText.setText(R.string.caption_Added);
+//                resultText.setText(R.string.caption_Added);
+
+                Log.i("TAGf", "6");
                 String name = editText.getText().toString();
+                Log.i("TAGg", "7");
 
-                try {
-                    URL url = new URL(name);
-                    Drawable captiondraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+                btnCaption.setVisibility(View.GONE);
 
-                } catch (Exception ex) {}
+                Log.i("TAGh", "8");
+
+                textOverlay(name, anImage);
+
+
+//                URL url = new URL(name);
+
+
+
+
+
+//                try {
+//                    URL url = new URL(name);
+//                    Drawable captiondraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+//
+//                } catch (Exception ex) {}
 
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
@@ -164,7 +245,7 @@ public class PhotoActivity extends AppCompatActivity {
 
                 Intent picMessageIntent = new Intent(android.content.Intent.ACTION_SEND);
                 picMessageIntent.setType("image/jpeg");
-                Log.d("TAG40", picID);
+//                Log.d("TAG40", picID);
 
                 Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/drawable/" + picID);
                 picMessageIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
