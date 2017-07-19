@@ -6,18 +6,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -38,7 +37,6 @@ import java.util.Random;
 
 import static android.R.color.white;
 import static android.graphics.Paint.EMBEDDED_BITMAP_TEXT_FLAG;
-import static com.example.gwc.yylit.R.color.icons;
 
 public class PhotoActivity extends AppCompatActivity {
 
@@ -105,10 +103,13 @@ public class PhotoActivity extends AppCompatActivity {
                 String name = editText.toString();
                 btnCaption.setVisibility(View.INVISIBLE);
                 URL url = new URL(name);
-                Drawable captionDraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+//                Drawable captionDraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
                 Canvas c = new Canvas(anImage);
-                Paint white = new Paint();
-                c.drawText(name, 100, 100, white);
+                Paint White = new Paint();
+                int myColor = context.getResources().getColor(white);
+                White.setColor(myColor);
+                White.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
+                c.drawText(name, 100, 100, White);
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int id) {
