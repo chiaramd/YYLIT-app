@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
@@ -44,6 +46,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Random;
 
+import static android.R.color.white;
+import static android.graphics.Paint.EMBEDDED_BITMAP_TEXT_FLAG;
 import static com.example.gwc.yylit.R.id.imageView;
 import static com.example.gwc.yylit.R.id.parent;
 
@@ -117,14 +121,22 @@ public class PhotoActivity extends AppCompatActivity {
 
         alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                resultText.setText(R.string.caption_Added);
+//                resultText.setText(R.string.caption_Added);
                 String name = editText.getText().toString();
+                btnCaption.setVisibility(View.INVISIBLE);
+//                URL url = new URL(name);
+                Canvas c = new Canvas(anImage);
+                Paint White = new Paint();
+                int myColor = ContextCompat.getColor(context, white);
+                White.setColor(myColor);
+                White.setFlags(EMBEDDED_BITMAP_TEXT_FLAG);
+                c.drawText(name, 100, 100, White);
 
-                try {
-                    URL url = new URL(name);
-                    Drawable captiondraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
-
-                } catch (Exception ex) {}
+//                try {
+//                    URL url = new URL(name);
+//                    Drawable captiondraw = new BitmapDrawable(context.getResources(), BitmapFactory.decodeStream(url.openConnection().getInputStream()));
+//
+//                } catch (Exception ex) {}
 
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
@@ -164,7 +176,7 @@ public class PhotoActivity extends AppCompatActivity {
 
                 Intent picMessageIntent = new Intent(android.content.Intent.ACTION_SEND);
                 picMessageIntent.setType("image/jpeg");
-                Log.d("TAG40", picID);
+//                Log.d("TAG40", picID);
 
                 Uri imageUri = Uri.parse("android.resource://com.example.gwc.yylit/drawable/" + picID);
                 picMessageIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
